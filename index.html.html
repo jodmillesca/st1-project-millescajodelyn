@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jodelyn Banatanto Millesca | Digital Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Dark Mode Background */
+        .dark body {
+            background: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #1e1b4b 100%);
+            background-attachment: fixed;
+        }
+        /* Light Mode Background */
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Glassmorphism */
+        .dark .glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .glass-card {
+            background: rgba(17, 24, 39, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(129, 140, 248, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(199, 210, 254, 0.6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.25);
+        }
+
+        .modal-bg {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-300">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 glass px-6 py-4 mb-8 border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-lg text-white shadow-lg shadow-indigo-500/30">
+                    JBM
+                </div>
+                <span class="font-bold text-xl tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 to-indigo-600 dark:from-white dark:to-indigo-200">
+                    Jodelyn B. Millesca
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm text-slate-600 dark:text-slate-300">
+                <a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">About</a>
+                <a href="#badges" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Certificates & Badges</a>
+                <a href="#summary" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">Overview</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <button onclick="toggleTheme()" aria-label="Toggle theme" class="w-10 h-10 rounded-xl glass flex items-center justify-center text-indigo-600 dark:text-indigo-400 hover:scale-105 transition shadow-sm">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+                <span class="bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs font-semibold">
+                    BSIT 4D
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 flex-grow space-y-16">
+
+        <!-- Hero Section -->
+        <section id="about" class="text-center py-12 relative">
+            <div class="inline-block p-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 mb-6 shadow-xl shadow-indigo-500/20">
+                <div class="bg-white dark:bg-slate-900 rounded-full p-1.5">
+                    <img src="formal pic.jpg" alt="Jodelyn Banatanto Millesca" class="w-32 h-32 rounded-full object-cover object-top bg-slate-200 dark:bg-slate-800">
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
+                Jodelyn Banatanto Millesca
+            </h1>
+            <div class="mb-4">
+                <a href="https://www.credly.com/users/jodelyn-millesca" target="_blank" rel="noopener noreferrer" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 text-sm font-semibold inline-flex items-center transition">
+                    <i class="fa-solid fa-external-link-alt mr-1.5 text-xs"></i> View Credly Profile
+                </a>
+            </div>
+            <p class="text-slate-600 dark:text-indigo-200/80 text-lg max-w-2xl mx-auto font-light mb-4">
+                Partido State University &bull; Bachelor of Science in Information Technology &bull; BSIT 4D
+            </p>
+            <div class="mt-6 flex justify-center gap-4 text-sm font-semibold flex-wrap">
+                <span class="glass px-4 py-2 rounded-lg text-slate-700 dark:text-slate-200">BSIT 4D</span>
+                <span class="glass px-4 py-2 rounded-lg text-slate-700 dark:text-slate-200">Partido State University</span>
+                <span class="glass px-4 py-2 rounded-lg text-slate-700 dark:text-slate-200">12 Verified Certificates</span>
+            </div>
+        </section>
+
+        <!-- Certificates & Badges Grid Section -->
+        <section id="badges" class="space-y-6">
+            <div class="flex items-center space-x-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <i class="fa-solid fa-certificate text-2xl text-indigo-500 dark:text-indigo-400"></i>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Certificates & Badges</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. Find Insights with AI -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Find Insights with AI', '6 Hours', '01 Oct 2026', 'https://www.credly.com/badges/b8a30a78-9567-4a99-ad1b-8a97efe5cc94/public_url', 'Learning how to find insights with AI made me realize how exciting it is to look at messy data and turn it into clear, useful answers. It feels like having a helpful smart assistant that makes problem-solving so much easier and faster. This course taught me how to extract patterns from raw data sets without getting overwhelmed by the numbers. I now feel much more confident using AI-driven analytical tools for my academic projects.', 'Find Insights.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="find-insights-with-ai.png" alt="Find Insights with AI" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Find Insights with AI</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 01 Oct 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Learning how to find insights with AI made me realize how exciting it is to look at messy data and turn it into clear answers...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 2. Build Your Resume with AI -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Build Your Resume with AI', '4 Hours', '01 Oct 2026', 'https://www.credly.com/badges/abf13eaa-61c9-4845-ad7e-417375a81f53/public_url', 'Using AI to build a resume taught me how to highlight my true strengths without second-guessing myself. It gave me practical tips on how to showcase my skills clearly so future employers can easily see what I can bring to the table. I learned how to structure my professional experiences effectively and optimize keywords for modern recruitment systems. This certificate gave me a tangible head start on my career preparation.', 'Build Your Resume.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="build-your-resume-with-ai.png" alt="Build Your Resume with AI" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Build Your Resume with AI</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 01 Oct 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Using AI to build a resume taught me how to highlight my true strengths without second-guessing myself...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 3. Prompt Like an Engineer -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Prompt Like an Engineer', '5 Hours', '01 Oct 2026', 'https://www.credly.com/badges/fa15c8d3-32d5-4e41-9ef5-0ce1a19322ea/public_url', 'This course showed me that talking to AI is an actual skill. By learning how to structure my questions properly, I stopped getting vague answers and started getting accurate, helpful results every single time. I discovered the importance of providing context, constraints, and precise instructions when interacting with language models. It is a game-changing skill that boosts my daily productivity as a programmer.', 'Prompt Like an Engineer.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="prompt-like-an-engineer.png" alt="Prompt Like an Engineer" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Prompt Like an Engineer</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 01 Oct 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">This course showed me that talking to AI is an actual skill. By learning how to structure my questions properly...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 4. Junior Cybersecurity Analyst Career Path -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Junior Cybersecurity Analyst Career Path', '30 Hours', '01 Oct 2026', 'https://www.credly.com/badges/72fce430-d840-47b4-b98e-bae199ba7adb/public_url', 'Finishing this career path felt like putting together a huge puzzle of how digital defense works. It gave me the confidence to understand security alerts, spot potential threats, and think like someone who protects important networks. I learned hands-on analysis techniques and foundational incident response strategies. This milestone solidified my passion for defending systems against modern cyber risks.', 'Junior Analyst.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="junior-cybersecurity-analyst-career-path.1.png" alt="Junior Cybersecurity Analyst" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Junior Cybersecurity Analyst Career Path</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 01 Oct 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Finishing this career path felt like putting together a huge puzzle of how digital defense works...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 5. Ethical Hacker -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Ethical Hacker', '15 Hours', '11 Sep 2026', 'https://www.credly.com/badges/c72586d7-6eee-4e93-a036-7cc1754f990e/public_url', 'Learning how hackers think was a real eye-opener. Instead of just studying how to build secure systems, I learned how to find weak spots first so I can help fix them before anyone else takes advantage of them. This course gave me insight into penetration testing principles and vulnerability assessments. It changed my perspective on defensive architecture by showing me how attackers probe networks.', 'Ethical Hacker.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="ethical-hacker.png" alt="Ethical Hacker" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Ethical Hacker</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 11 Sep 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Learning how hackers think was a real eye-opener. Instead of just studying how to build secure systems...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 6. Cyber Threat Management -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Cyber Threat Management', '14 Hours', '11 Sep 2026', 'https://www.credly.com/badges/eb9afd71-a3e8-4a14-b7fe-0cdeff9b8cc9/public_url', 'This topic taught me that waiting for problems to happen is never a good idea. I learned how important it is to keep an eye out for dangers early and know what steps to take if something goes wrong. Analyzing threat intelligence feeds and understanding adversary behavior helped me appreciate proactive security postures. It reinforced that robust defense requires continuous monitoring and structured mitigation strategies.', 'CyberThreat.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="cyber-threat-management.png" alt="Cyber Threat Management" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Cyber Threat Management</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 11 Sep 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">This topic taught me that waiting for problems to happen is never a good idea...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 7. Computer Hardware Basics -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Computer Hardware Basics', '12 Hours', '01 Sep 2026', 'https://www.credly.com/badges/8cd618f6-176b-4765-8125-09e45ed7cd00/public_url', 'Understanding computer hardware helped me get comfortable with the physical parts that make computers work. Knowing what goes on inside the machine makes troubleshooting physical computer issues much less intimidating. I learned how individual components like CPUs, RAM, and storage drives interact to run a system efficiently. This hands-on hardware knowledge gives me a well-rounded foundation for general IT maintenance.', 'Computer Hardware.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="computer-hardware-basics.png" alt="Computer Hardware Basics" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Computer Hardware Basics</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 01 Sep 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Understanding computer hardware helped me get comfortable with the physical parts that make computers work...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 8. Operating Systems Basics -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Operating Systems Basics', '12 Hours', '27 Aug 2026', 'https://www.credly.com/badges/32b73642-4212-4fc1-abd9-938d3c25a856/public_url', 'Getting the hang of operating systems gave me a solid grasp of how Windows and Linux manage files and user accounts behind the scenes. It feels great to navigate through system files and command lines with confidence. I learned how operating systems allocate resources and handle security permissions. This knowledge bridges the gap between hardware architecture and user application software.', 'Operating system Basics.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="operating-systems-basics.png" alt="Operating Systems Basics" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Operating Systems Basics</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 27 Aug 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Getting the hang of operating systems gave me a solid grasp of how Windows and Linux manage files...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 9. Introduction to Modern AI -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Introduction to Modern AI', '8 Hours', '24 Aug 2026', 'https://www.credly.com/badges/effe3bfd-3e7a-4dc9-baa7-140c174fccca/public_url', 'Exploring modern AI opened my eyes to how machine learning and smart models actually operate. It is amazing to see how computers can process huge amounts of information and recognize patterns to help us every day. I learned about neural networks, natural language processing, and automated decision systems. This course inspired me to follow emerging technology trends closely.', 'Intro to Modern AI.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="introduction-to-modern-ai.png" alt="Introduction to Modern AI" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Introduction to Modern AI</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 24 Aug 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Exploring modern AI opened my eyes to how machine learning and smart models actually operate...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 10. Introduction to IoT and Digital Transformation -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Introduction to IoT and Digital Transformation', '6 Hours', '23 Aug 2026', 'https://www.credly.com/badges/c0dde8f3-be76-4e31-86be-182e4ce1ebf7/public_url', 'Learning about the Internet of Things showed me how everyday objects can connect and share data through smart sensors. It really highlighted how technology is making our physical world much more connected and automated. I gained an appreciation for smart device ecosystems and industrial data transmission. This knowledge makes me eager to explore connected device projects in the future.', 'Intro to Iot.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="introduction-to-iot.png" alt="Introduction to IoT" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Introduction to IoT and Digital Transformation</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 23 Aug 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Learning about the Internet of Things showed me how everyday objects can connect and share data...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 11. IT Customer Support Basics -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('IT Customer Support Basics', '10 Hours', '21 Aug 2026', 'https://www.credly.com/badges/9888e0a8-aa54-4f35-b977-08f808984337/public_url', 'This course reminded me that having technical skills is only half the job; listening well and communicating with patience is just as important. I learned how to handle support tickets and help people solve their tech troubles with a friendly attitude. Developing professional communication strategies taught me how to break down complex technical jargon for everyday users. It is an essential skill for any collaborative IT work environment.', 'IT Customer.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="it-customer-support-basics.png" alt="IT Customer Support Basics" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">IT Customer Support Basics</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 21 Aug 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">This course reminded me that having technical skills is only half the job; listening well and communicating...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- 12. Introduction to Cybersecurity -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between" onclick="openModal('Introduction to Cybersecurity', '6 Hours', '20 Aug 2026', 'https://www.credly.com/badges/0403abc9-5d16-48e8-b07f-1c2454f08f43/public_url', 'Starting with this cybersecurity introduction gave me a strong appreciation for why keeping digital information safe matters so much. It taught me the basic rules of protecting data privacy and keeping systems secure from everyday risks. Understanding network vulnerabilities and basic defense concepts built a secure mindset early on. This initial module laid the groundwork for my later security certifications.', 'Intro to Cybersecurity.png')">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <img src="introduction-to-cybersecurity.png" alt="Introduction to Cybersecurity" class="w-14 h-14 object-contain rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 shrink-0">
+                            <div>
+                                <h3 class="font-bold text-base text-slate-900 dark:text-white leading-snug">Introduction to Cybersecurity</h3>
+                                <p class="text-xs text-indigo-600 dark:text-indigo-300 font-medium mt-1"><i class="fa-regular fa-clock mr-1"></i> Completed: 20 Aug 2026</p>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">Starting with this cybersecurity introduction gave me a strong appreciation for why keeping digital information safe matters...</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800/80 flex justify-between items-center text-cyan-600 dark:text-cyan-400 text-xs font-semibold">
+                        <span>View Details & Certificate</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Overall Summary Section -->
+        <section id="summary" class="space-y-6">
+            <div class="flex items-center space-x-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+                <i class="fa-solid fa-pen-nib text-2xl text-indigo-500 dark:text-indigo-400"></i>
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Overall Learning Summary</h2>
+            </div>
+            <div class="glass-card rounded-2xl p-6 space-y-4">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Continuous Growth as a BSIT Student</h3>
+                <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+                    Looking back at everything I have learned as an IT student at Partido State University, earning these Cisco certificates has been an amazing way to connect what I study in class with real-world skills. From learning how to keep systems secure and understand hardware to exploring AI and helping people solve technical problems, this journey has helped me grow not just as a student, but as someone genuinely excited to build a future in technology.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Certificate Modal Window -->
+    <div id="certModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-bg hidden overflow-y-auto">
+        <div class="glass max-w-2xl w-full rounded-2xl p-6 md:p-8 relative border border-indigo-500/30 shadow-2xl bg-white/95 dark:bg-slate-900/95 space-y-6 my-8">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header Info -->
+            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-5 pr-8">
+                <div class="w-20 h-20 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden flex items-center justify-center shrink-0 shadow-md p-1">
+                    <img id="modalBadgeImg" src="" alt="Badge Preview" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h3 id="modalTitle" class="text-2xl font-bold text-slate-900 dark:text-white leading-tight">Certificate Title</h3>
+                    <div class="flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-300 mt-2">
+                        <span><i class="fa-regular fa-clock mr-1 text-cyan-600 dark:text-cyan-400"></i> <span id="modalHours">6 Hours</span></span>
+                        <span><i class="fa-regular fa-calendar mr-1 text-cyan-600 dark:text-cyan-400"></i> Completed: <span id="modalDate">Aug 15, 2026</span></span>
+                    </div>
+                    <div class="mt-2">
+                        <a id="modalCredlyLink" href="#" target="_blank" rel="noopener noreferrer" class="text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 dark:hover:text-cyan-300 text-xs font-semibold inline-flex items-center transition">
+                            <i class="fa-solid fa-external-link-alt mr-1.5"></i> View Badge
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Reflection Section -->
+            <div class="bg-slate-100 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 rounded-xl p-5 space-y-2">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 flex items-center">
+                    <i class="fa-solid fa-pen-nib mr-2"></i>Personal Reflection
+                </h4>
+                <p id="modalReflection" class="text-slate-700 dark:text-slate-300 text-sm leading-relaxed"></p>
+            </div>
+
+            <!-- Toggle Certificate Preview Button -->
+            <div>
+                <button onclick="toggleCertPreview()" id="togglePreviewBtn" class="w-full py-3 px-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-semibold transition flex items-center justify-center space-x-2 shadow-lg shadow-cyan-600/20">
+                    <i class="fa-solid fa-eye"></i>
+                    <span id="previewBtnText">View Certificate Preview</span>
+                </button>
+            </div>
+
+            <!-- Certificate Document Image Section -->
+            <div id="certPreviewContainer" class="hidden space-y-3 pt-2 border-t border-slate-200 dark:border-slate-800">
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Verified Cisco Networking Academy Certificate Document:</p>
+                <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-2">
+                    <img id="modalCertDoc" src="" alt="Certificate Document" class="w-full h-auto object-contain">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 glass py-8 text-center text-slate-600 dark:text-slate-400 text-sm">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-semibold text-slate-900 dark:text-white">Jodelyn Banatanto Millesca <span class="text-indigo-600 dark:text-indigo-400">| BSIT 4D &bull; Partido State University</span></p>
+            </div>
+            <p>© All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                html.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+        }
+
+        function openModal(title, hours, date, credlyUrl, reflection, imageUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalHours').innerText = hours;
+            document.getElementById('modalDate').innerText = date;
+            document.getElementById('modalCredlyLink').href = credlyUrl;
+            document.getElementById('modalReflection').innerText = reflection;
+            
+            document.getElementById('modalBadgeImg').src = imageUrl;
+            document.getElementById('modalCertDoc').src = imageUrl;
+
+            document.getElementById('certPreviewContainer').classList.add('hidden');
+            document.getElementById('previewBtnText').innerText = 'View Certificate Preview';
+            document.querySelector('#togglePreviewBtn i').className = 'fa-solid fa-eye';
+
+            document.getElementById('certModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('certModal').classList.add('hidden');
+        }
+
+        function toggleCertPreview() {
+            const container = document.getElementById('certPreviewContainer');
+            const btnText = document.getElementById('previewBtnText');
+            const icon = document.querySelector('#togglePreviewBtn i');
+
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+                btnText.innerText = 'Hide Certificate Preview';
+                icon.className = 'fa-solid fa-eye-slash';
+            } else {
+                container.classList.add('hidden');
+                btnText.innerText = 'View Certificate Preview';
+                icon.className = 'fa-solid fa-eye';
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('certModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
